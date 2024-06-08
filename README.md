@@ -69,9 +69,15 @@ The end goal is to have material UI and react app installed. Both of these compo
 1. Open command prompt and activate anaconda environment.
 2. Run:
 
+        npm install react
+3. Run:
+
+        npm install react react-dom
+4. Run:
+
         npm install @mui/material @emotion/react @emotion/styled`
-3. Navigate to the repo folder in command prompt
-4. Run
+5. Navigate to the repo folder in command prompt
+6. Run
 
         npx create-react-app [project-name]
 
