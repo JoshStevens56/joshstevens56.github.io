@@ -1,25 +1,26 @@
 # JoshsWebsite
+
 Repository for my personal website.
 
 ## Project Overview
-A static website designed to be a pl;a
 
-### Components
+A static website designed to be a place for me to host my game/tv tracker and also be my portfolio.
 
-The following components/levels to the project:
+### Structure
 
-1. React Typescript Front End
-2. Back End
+Made up of 3 components:
 
-## Features, Planning, and To-Do
+- front end | written in react | hosted in ????
+- back end | written in ???? | hosted in ????
+- database | written in ???? | hosted in ????
+
+### Features, Planning, and To-Do
 
 Refer to the github projects to track progress:
 
 - <https://github.com/users/JoshStevens56/projects/1/views/1>
 
-## Setup and Usage
-
-General guidance for running and installing the project.
+## Front End
 
 ### Running
 
@@ -28,7 +29,7 @@ Sequence of commands to run when starting up the project
 1. Open terminal in VsCode/Command Prompt
 2. Activate Virtual Environment | `conda activate PersonalWebsite`
 3. Navigate to Project folder | `C:\Users\User\source\repos\PersonalWebsite`
-4. Navigate inside react folder | `*\joshwebsite_react`
+4. Navigate inside react folder | `*\joshswebsite_react`
 5. Run React App | `nmp start`
 
 ### Installation
