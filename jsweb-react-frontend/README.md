@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running
 
-## Available Scripts
+Sequence of commands to run when starting up the project
 
-In the project directory, you can run:
+1. Open terminal in VS Code/Command Prompt
+2. Activate Virtual Environment
 
-### `npm start`
+         conda activate PersonalWebsite
+3. Navigate to Project folder `C:\Users\User\source\repos\PersonalWebsite`
+4. Navigate inside react folder
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+        cd jsweb-react-frontend
+5. Run React App
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        nmp start
 
-### `npm test`
+## Deploy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thanks to gh pages in numpy, we can build and deploy the app with a quick terminal command.
+This builds the app, and deploys it to the gh-pages branch.
 
-### `npm run build`
+Run via the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        npm run deploy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The following frameworks and ecosystems are needed for this project:
 
-### `npm run eject`
+- anaconda
+- numpy
+- material UI
+- react app
+- gh pages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The end goal is to have material UI and react app installed. Both of these components require using numpy to install them. Numpy, and other relevant frameworks and installed and managed by anaconda
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### - Anaconda
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Go to <https://www.anaconda.com/>
+2. Download and Install Anaconda
+3. Create a separate virtual environment for anaconda install (i.e. 'Personal Website')
+4. Add node.js to environment packages
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### - Numpy
 
-## Learn More
+1. Open the command prompt
+2. (Optional) Use the following command to validate the virtual environment has been properly created"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        conda info --envs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Active the virtual environment:
+
+        conda activate [environment name]
+4. Install numpy with the following command:
+
+        conda install numpy
+
+### - React and Material UI
+
+1. Open command prompt and activate anaconda environment.
+2. Navigate to the repo folder in command prompt
+3. Run
+
+        npx create-react-app my-app --template typescript
+
+4. Run:
+
+        npm install react react-dom
+5. Run:
+
+        npm install @mui/material @emotion/react @emotion/styled
+
+*Refer to the following resources for additional guidance and context:*
+
+- [react app install via vscode](<https://code.visualstudio.com/docs/nodejs/reactjs-tutorial>)
+- [material ui installation](https://mui.com/material-ui/getting-started/installation/)
+- [numpy installation](<https://numpy.org/install/>)
+
+### GH Pages
+
+We use GH Pages to build and deploy our app to gh-pages.
+Refer to this URL for more info:
+[Deploying React apps to github pages](https://blog.logrocket.com/deploying-react-apps-github-pages/)
+
+1. Run:
+
+        npm install gh-pages --save-dev
+2. Open package.json
+3. Inside the `scripts` section, add the following:
+
+        "predeploy" : "npm run build",
+        "deploy" : "gh-pages -d build",
+
+4. Deploy the app by running:
+
+        npm run deploy
+5. Open Github
+6.
+
+## Reference
+
+### NumPy Commands
+
+`npm start`
+
+- Starts the development server.
+
+`npm run build`
+
+- Bundles the app into static files for production.
+
+`npm test`
+
+- Starts the test runner.
+
+`npm run eject`
+
+- Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
