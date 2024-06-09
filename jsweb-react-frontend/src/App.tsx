@@ -1,28 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ButtonUsage from './components/Button'
+import React, {useState} from "react";
+import logo from "./logo.svg";
+import "./styling/App.css";
+import Header from "./ui-components/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <ButtonUsage></ButtonUsage>
+      <div>
+          <Header></Header>
+      </div>
+      <div>
+       
+        Gonna do some epic gamer stuff and maybe a portfolio too 😳 
+      </div>
     </div>
-
   );
 }
 

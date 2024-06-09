@@ -10,9 +10,20 @@ A static website designed to be a place for me to host my game/tv tracker and al
 
 Made up of 3 components:
 
-- front end | written in react | hosted in ???? (github pages?)
-- back end | written in ???? | hosted in ...
-- database | written in ???? | hosted in ????
+#### Front End
+
+- written in react
+- hosted in github pages (<https://joshua-stevens.me>)
+
+#### Backend
+
+- written in ...
+- hosted in ... jsonbin.io?
+
+#### Database
+
+- written in ...
+- hosted in ...
 
 [Deploying React apps to github pages](https://blog.logrocket.com/deploying-react-apps-github-pages/)
 
