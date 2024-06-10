@@ -1,18 +1,19 @@
-import React, {useState} from "react";
-import logo from "./logo.svg";
-import "./styling/App.css";
-import Header from "./ui-components/Header";
+import "./style.css";
+import { PageLayout } from './ui-components/PageLayout';
+
+/** ------------------------------------
+ *  App
+ *  ------------------------------------
+ *  Second-most Root level of application. Start of actual rendering behaviour.
+ * 
+ *  <div className="App"> - Highest level div. Renders background colour.
+ * ------------------------------------ */
+
 
 function App() {
   return (
-    <div className="App">
-      <div>
-          <Header></Header>
-      </div>
-      <div>
-       
-        Gonna do some epic gamer stuff and maybe a portfolio too 😳 
-      </div>
+    <div className="app">
+      <PageLayout/>
     </div>
   );
 }

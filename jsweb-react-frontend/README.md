@@ -25,7 +25,7 @@ Run via the following command:
 
         npm run deploy
 
-## Installation
+## Installation and Setup
 
 The following frameworks and ecosystems are needed for this project:
 
@@ -34,7 +34,6 @@ The following frameworks and ecosystems are needed for this project:
 - material UI
 - react app
 - gh pages
-- jsx runtime
 
 The end goal is to have material UI and react app installed. Both of these components require using numpy to install them. Numpy, and other relevant frameworks and installed and managed by anaconda
 
@@ -99,7 +98,7 @@ Refer to this URL for more info:
 
         npm run deploy
 5. Open Github
-6.
+6. Navigate to settings>pages for the repo
 
 ## Reference
 

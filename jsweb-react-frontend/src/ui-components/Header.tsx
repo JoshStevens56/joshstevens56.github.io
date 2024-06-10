@@ -1,33 +1,52 @@
-import React, { useState } from "react";
-import logo from "../logo.svg";
-import "../styling/Header.css";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
-export const Header = () => {
-  const [state, setState] = useState<boolean>(false);
+import logo from "../logo.svg";
+
+const pages = ["About", "Portfolio", "Blog", "Contact"];
+
+function Header() {
+  const [header, setHeader] = React.useState<string | null>("Joshua Stevens");
+  const navigate = useNavigate();
 
   return (
-    <div className="Header">
-      <div>
-        <button
-          onClick={() => {
-            setState(!state);
-          }}
-        >
-          {" "}
-          button{" "}
-        </button>
-      </div>
-      <div>
-        {state == false && <p> Welcome to My Website</p>}
-        {state == true && (
-          <p> Congratulations you activated the super scerte stuff wowee (we love shadow claw)</p>
-        )}
-      </div>
-      <div>
-        <img src={logo} className="App-logo" alt="logo" />
-      </div>
-    </div>
+    <AppBar position="static">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Button onClick={() => navigate("/")}>
+            {" "}
+            <img
+              src={logo}
+              className="logo"
+              onClick={() => navigate("/")}
+            ></img>
+          </Button>
+          <Typography fontWeight={'bold'}>Joshua Stevens</Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { display: "flex", flexDirection: "row-reverse" },
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={() => navigate(`/${page}`)}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
-};
-
+}
 export default Header;
