@@ -34,6 +34,7 @@ The following frameworks and ecosystems are needed for this project:
 - material UI
 - react app
 - gh pages
+- fullpage.js
 
 The end goal is to have material UI and react app installed. Both of these components require using numpy to install them. Numpy, and other relevant frameworks and installed and managed by anaconda
 

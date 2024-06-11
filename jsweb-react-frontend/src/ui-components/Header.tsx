@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "../logo.svg";
 
+import '../style.css';
+
 const pages = ["About", "Portfolio", "Blog", "Contact"];
 
 function Header() {
@@ -16,18 +18,17 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" sx={{background:'#EFEFEF', color: '#323F49', boxShadow:'none'}} className="header">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Button onClick={() => navigate("/")}>
-            {" "}
             <img
               src={logo}
               className="logo"
               onClick={() => navigate("/")}
             ></img>
           </Button>
-          <Typography fontWeight={'bold'}>Joshua Stevens</Typography>
+          <Typography fontWeight='500' fontSize='2vmin' textTransform='uppercase'>Joshua Stevens</Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -38,7 +39,7 @@ function Header() {
               <Button
                 key={page}
                 onClick={() => navigate(`/${page}`)}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 {page}
               </Button>

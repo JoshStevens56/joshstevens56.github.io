@@ -1,68 +1,115 @@
+:root {
+  --theme-colour-orange: #FF9456;
+  --theme-colour-steel: #323F49;
+  --theme-colour-red: #D85A62;
+  --theme-colour-green: #6AB97B;
+  --theme-colour-blue: #2D8CC5;
+  --background-colour-1: #EFEFEF;
+}
 
-  :root {
-      --theme-colour-orange: #FF9456;
-      --theme-colour-steel: #323F49;
-      --theme-colour-red: #D85A62;
-      --theme-colour-green: #6AB97B;
-      --theme-colour-blue: #2D8CC5;
-      --background-colour-1: #EFEFEF;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+    /* needed for container min-height */
+}
 
-  html{
-    height:100%
-  }
-  body {
-    background-color: var(--background-colour-1);
-    height:100%;
-    margin:0;
-  }
+#root {
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+  background-color: var(--background-colour-1);
+}
 
-  .app,.page {
-    height:100%
-  }
+.app {
+  height: 100%;
+  min-height: 4px;
+  width:100%
+}
 
-  .logo {
-    height: 6vmin;
-    pointer-events: none;
+.header {
+  /*height:4%*/
+  background: var(--background-colour-1);
+  color: black;
+  box-shadow: none;
+  display:fixed
+}
+
+.page {
+  height: 95%
+}
+
+.logo {
+  height: 6vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .app-logo {
-      animation: App-logo-spin infinite 20s linear;
+}
+
+.scrollbar {
+  display: flex;
+  position: sticky;
+  width: 8%;
+  min-height: 100%;
+
+  .img{
+    position: fixed;
+    align-content: center;
+    top:50%;
+
+    .icons{
+      display:flex;
+      flex-direction:column;
     }
   }
-  
-  .header{
-    background-color: #282c34;
-    min-height: 42px;
-    max-height: 4%;
+}
+
+
+.homepage {
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+}
+
+.subpages{
+
+  width:100%;
+
+  .subpage {
     display: flex;
     flex-direction: row;
-    align-items:stretch;
-    justify-content:space-evenly;
-    font-size: calc(10px + 2vmin);
-    color: white;
+
+    .component {
+      display: flex;
+      flex-direction: column;
+      padding: 22% 4% 22% 4%;
+      text-align: left;
+      width:50%
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 7vmin;
+      align-content: center;
+      overflow: auto;
+      overflow-wrap: break-word;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      padding-left: 0.4%;
+      font-size: 2vmin;
+      align-content: center;
+      overflow: auto;
+      overflow-wrap: break-word;
+      color: #828282
+    }
+    
+  }
 }
-  .app-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
-  .home{
-    display:flex;
-    height: 100%;
-  }
-
-  .title{
-    font-size: 100;
-    width:50%
-  }
-  
