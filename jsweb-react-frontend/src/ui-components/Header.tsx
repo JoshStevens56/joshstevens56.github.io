@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,7 +13,6 @@ import '../style.css';
 const pages = ["About", "Portfolio", "Blog", "Contact"];
 
 function Header() {
-  const [header, setHeader] = React.useState<string | null>("Joshua Stevens");
   const navigate = useNavigate();
 
   return (

@@ -6,7 +6,6 @@ import {
   CardActions,
   ButtonProps,
   styled,
-  Color,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -20,8 +19,6 @@ declare module "@mui/material/styles" {
   }
 }
 
-
-  
 interface CardContent {
   title: string;
   subtitle: string;

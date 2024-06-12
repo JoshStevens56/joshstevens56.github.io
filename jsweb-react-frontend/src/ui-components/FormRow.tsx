@@ -1,16 +1,9 @@
 import React from "react";
 import {
-  Color,
-  Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
   Grid,
   Paper,
 } from "@mui/material";
 
-import { red, green, blue, blueGrey, orange } from "@mui/material/colors";
 import { HomeTitleCard } from "./HomeTitleCard";
 
 interface FormRow {

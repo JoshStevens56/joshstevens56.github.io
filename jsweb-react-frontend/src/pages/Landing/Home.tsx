@@ -2,23 +2,15 @@ import * as React from "react";
 import {
   Box,
   Typography,
-  Card,
   CardContent,
   CardActions,
   Button,
   Grid,
-  Paper,
 } from "@mui/material";
 
-import { red, green, blue, blueGrey, orange } from "@mui/material/colors";
-import { styled } from "@mui/material/styles";
-
-import { Subpage } from "./Subpage";
-import logo from "../../resources/img/logo.svg";
 
 import "../../style.css";
 import { FormRow } from "../../ui-components/FormRow";
-import { ThemeProvider } from "@mui/material";
 /** ------------------------------------
  *  Home
  *  ------------------------------------
@@ -28,13 +20,7 @@ import { ThemeProvider } from "@mui/material";
  * Each subpage has split content,.
  * ------------------------------------ */
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+
 
 const bull = (
   <Box
@@ -80,55 +66,10 @@ export const Home = () => {
           button_include={false}
           button_text=""
           button_link=""
-          theme_color="primary"
+          theme_color="pink"
           subcontent={portfoliocard}
         />
       </Grid>
-      <Grid container item className="HomeGrid-Row">
-        <FormRow
-          title="About"
-          subtitle="Learn a little about me"
-          button_include={true}
-          button_text="About"
-          button_link="about"
-          theme_color="secondary"
-          subcontent={portfoliocard}
-        />
-      </Grid>
-      <Grid container item className="HomeGrid-Row">
-        <FormRow
-          title="Portfolio"
-          subtitle="Take a closer look at my professional career"
-          button_include={true}
-          button_text="Check it out"
-          button_link=""
-          theme_color="#D85A62"
-          subcontent={portfoliocard}
-        />
-      </Grid>
-      <Grid container item className="HomeGrid-Row">
-        <FormRow
-          title="Blog"
-          subtitle="Watch my obsessions"
-          button_include={false}
-          button_text=""
-          button_link=""
-          theme_color="#D85A62"
-          subcontent={portfoliocard}
-        />
-      </Grid>
-      <Grid container item className="HomeGrid-Row">
-        <FormRow
-          title="Portfolio"
-          subtitle="Take a closer look at my professional career"
-          button_include={false}
-          button_text=""
-          button_link=""
-          theme_color="#D85A62"
-          subcontent={portfoliocard}
-        />
-      </Grid>
-
     </Grid>
   );
 };
