@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../ui-components/Header';
+import Header from '../../ui-components/Header';
 
 /** ------------------------------------
  *  About
@@ -10,7 +10,7 @@ import Header from '../ui-components/Header';
  *  <div className="App"> - Highest level div. Renders background colour.
  * ------------------------------------ */
 
-export default function About() {
+export const About =() => {
   return (
     <>
       <h1>About Me</h1>

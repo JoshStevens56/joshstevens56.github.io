@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
-import logo from "../logo.svg";
+import logo from "../resources/img/logo.svg";
 
 import '../style.css';
 
@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <AppBar position="sticky" sx={{background:'#EFEFEF', color: '#323F49', boxShadow:'none'}} className="header">
-      <Container maxWidth="xl">
+      <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Button onClick={() => navigate("/")}>
             <img
@@ -28,7 +28,7 @@ function Header() {
               onClick={() => navigate("/")}
             ></img>
           </Button>
-          <Typography fontWeight='500' fontSize='2vmin' textTransform='uppercase'>Joshua Stevens</Typography>
+          <Typography textTransform='uppercase' overflow={'clip'}>Joshua Stevens</Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -39,7 +39,7 @@ function Header() {
               <Button
                 key={page}
                 onClick={() => navigate(`/${page}`)}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ textTransform:'capitalize',my: 2, color: "black", display: "block" }}
               >
                 {page}
               </Button>
