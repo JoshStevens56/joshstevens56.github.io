@@ -1,23 +1,13 @@
 import {
   Typography,
   Button,
-  Card,
+  Box,
   CardContent,
   CardActions,
   ButtonProps,
   styled,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-declare module "@mui/material/styles" {
-  interface Palette {
-    custom: Palette["primary"];
-  }
-
-  interface PaletteOptions {
-    custom?: PaletteOptions["primary"];
-  }
-}
 
 interface CardContent {
   title: string;
@@ -31,19 +21,18 @@ interface CardContent {
 export const HomeTitleCard = (Props: CardContent) => {
   const navigate = useNavigate();
 
-
   const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-    color: theme.palette.getContrastText(Props.themecolor[500]),
-    backgroundColor: Props.themecolor[500],
+    color: theme.palette.getContrastText(Props.themecolor),
+    backgroundColor: Props.themecolor,
     "&:hover": {
-      backgroundColor: Props.themecolor[500],
+      backgroundColor: Props.themecolor,
     },
   }));
 
   return (
-    <Card sx={{ height: "100%" }}>
+    <Box sx={{ height: "100%", alignContent:"center" }}>
       <CardContent>
-        <Typography color={Props.themecolor} variant="h2" >
+        <Typography color={Props.themecolor} variant="h2">
           {Props.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -52,7 +41,6 @@ export const HomeTitleCard = (Props: CardContent) => {
       </CardContent>
       {Props.buttonvisible && (
         <CardActions>
-          (
           <ColorButton
             size="small"
             variant="contained"
@@ -60,9 +48,8 @@ export const HomeTitleCard = (Props: CardContent) => {
           >
             {Props.buttonText}
           </ColorButton>
-          )
         </CardActions>
       )}
-    </Card>
+    </Box>
   );
 };

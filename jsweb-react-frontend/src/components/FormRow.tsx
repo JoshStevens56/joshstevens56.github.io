@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Paper,
-} from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 
 import { HomeTitleCard } from "./HomeTitleCard";
 
@@ -17,7 +14,7 @@ interface FormRow {
 }
 export const FormRow = (Props: FormRow) => {
   return (
-    <React.Fragment>
+    <>
       <Grid item xs={0.5} sx={{ bgcolor: Props.theme_color[500] }}>
         <Paper></Paper>
       </Grid>
@@ -34,6 +31,6 @@ export const FormRow = (Props: FormRow) => {
       <Grid item xs={5}>
         {Props.subcontent}
       </Grid>
-    </React.Fragment>
+    </>
   );
 };

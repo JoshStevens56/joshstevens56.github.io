@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../ui-components/Header';
+import Header from '../../components/Header';
 
 /** ------------------------------------
- *  Portfolio.tsx
+ *  About
  *  ------------------------------------
- *  Landing page for the portfolio section of the site.
+ *  About page for the site.
  * 
  *  <div className="App"> - Highest level div. Renders background colour.
  * ------------------------------------ */
 
-export const Portfolio =()=> {
+export const About =() => {
   return (
     <>
       <h1>About Me</h1>

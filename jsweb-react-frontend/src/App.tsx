@@ -1,5 +1,5 @@
-import "./style.css";
-import { PageLayout } from "./ui-components/PageLayout";
+import "./styling/root.css";
+import { PageLayout } from "./components/PageLayout";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { orange } from "@mui/material/colors";
 

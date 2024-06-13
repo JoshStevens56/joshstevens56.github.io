@@ -6,9 +6,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
-import logo from "../resources/img/logo.svg";
+import logo from '../assets/images/logo.svg'
 
-import '../style.css';
+import '../styling/components.css';
 
 const pages = ["About", "Portfolio", "Blog", "Contact"];
 
