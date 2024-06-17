@@ -12,41 +12,41 @@ import { useNavigate } from "react-router-dom";
 interface CardContent {
   title: string;
   subtitle: string;
-  buttonText: string;
-  buttonLink: string;
-  themecolor: string;
-  buttonvisible: boolean;
+  buttontext: string;
+  buttonlink: string;
+  colour: string;
+  enablebutton: boolean;
 }
 
 export const HomeTitleCard = (Props: CardContent) => {
   const navigate = useNavigate();
 
   const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-    color: theme.palette.getContrastText(Props.themecolor),
-    backgroundColor: Props.themecolor,
+    color: theme.palette.getContrastText(Props.colour),
+    backgroundColor: Props.colour,
     "&:hover": {
-      backgroundColor: Props.themecolor,
+      backgroundColor: Props.colour,
     },
   }));
 
   return (
     <Box sx={{ height: "100%", alignContent:"center" }}>
       <CardContent>
-        <Typography color={Props.themecolor} variant="h2">
+        <Typography color={Props.colour} variant="h2">
           {Props.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {Props.subtitle}
         </Typography>
       </CardContent>
-      {Props.buttonvisible && (
+      {Props.enablebutton && (
         <CardActions>
           <ColorButton
             size="small"
             variant="contained"
-            onClick={() => navigate(`/${Props.buttonLink}`)}
+            onClick={() => navigate(`/${Props.buttonlink}`)}
           >
-            {Props.buttonText}
+            {Props.buttontext}
           </ColorButton>
         </CardActions>
       )}

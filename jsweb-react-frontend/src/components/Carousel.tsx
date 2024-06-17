@@ -3,7 +3,7 @@ import { Box, Icon } from "@mui/material";
 import { IconButton } from "@mui/material";
 import Slide from "@mui/material/Slide";
 import Stack from "@mui/material/Stack";
-import { HomeTitleCard } from "./HomeTitleCard";
+import { HomePageContent } from "./HomePageContent";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
@@ -16,7 +16,22 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
  *  Followed the following page for guidance: https://medium.com/@ltomblock/crafting-a-professional-looking-carousel-with-react-and-mui-746a86af0ab0
  * ------------------------------------ */
 
-export const Carousel = () => {
+export interface CarouselCards {
+  content: CardContent[]
+}
+
+interface CardContent {
+  title: string,
+  subtitle: string,
+  buttonlink: string,
+  buttontext: string,
+  colour: string,
+  buttonvisible: boolean
+  subcontent: any
+}
+
+
+export const Carousel = (Props: CarouselCards) => {
   const [cards, setCards] = useState<React.ReactElement[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [slideDirection, setSlideDirection] = useState<
@@ -25,15 +40,16 @@ export const Carousel = () => {
 
   const cardsPerPage = 1; //defines how many cards show per page
   const duplicateCards: React.ReactElement[] = Array.from(
-    { length: 10 },
+    { length: Props.content.length },
     (_, i) => (
-      <HomeTitleCard
-        title="Title"
-        subtitle="Subtitle"
-        buttonLink=""
-        buttonText="button"
-        themecolor="pink"
-        buttonvisible={false}
+      <HomePageContent
+        title={Props.content[i].title}
+        subtitle={Props.content[i].subtitle}
+        buttonlink={Props.content[i].buttonlink}
+        buttontext={Props.content[i].buttontext}
+        colour={Props.content[i].colour}
+        enablebutton={Props.content[i].buttonvisible}
+        subcontent={Props.content[i].subcontent}
         key={i}
       />
     )
@@ -61,7 +77,8 @@ export const Carousel = () => {
         alignItems: "center",
         alignContent: "center",
         justifyContent: "center",
-        height: "400px",
+        height: "100%",
+        width:"100%"
       }}
     >
       <IconButton
@@ -79,6 +96,7 @@ export const Carousel = () => {
           alignContent: "center",
           justifyContent: "center",
           height: "400px",
+          width:"100%"
         }}
       >
         {cards.map((card, index) => (
@@ -86,7 +104,7 @@ export const Carousel = () => {
             key={"card-${index}"}
             sx={{
               width: "100%",
-              hieght: "100%",
+              height: "100%",
               display: currentPage === index ? "block" : "none",
             }}
           >
