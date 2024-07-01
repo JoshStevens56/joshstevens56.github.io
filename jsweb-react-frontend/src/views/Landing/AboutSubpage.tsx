@@ -10,8 +10,8 @@ interface ImageCard{
 
 export const ImageCard = (Props:ImageCard) => {
   return (
-    <> <Box sx={{padding:'4%'}}>
-        <CardMedia image={Props.image} sx={{height:'undefined', width:'100%', aspectRatio:1}}></CardMedia>
+    <> <Box sx={{padding:'8%'}}>
+        <CardMedia image={Props.image} sx={{height:'100%', width:'100%', aspectRatio:1}}></CardMedia>
         <CardContent><Typography >{Props.text}</Typography></CardContent>
         </Box>
     </>

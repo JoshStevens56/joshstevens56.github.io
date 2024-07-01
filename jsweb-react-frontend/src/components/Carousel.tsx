@@ -95,7 +95,7 @@ export const Carousel = (Props: CarouselCards) => {
           alignItems: "center",
           alignContent: "center",
           justifyContent: "center",
-          height: "400px",
+          height: "100%",
           width:"100%"
         }}
       >
