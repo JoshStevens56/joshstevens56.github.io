@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Paper } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 
 import { HomeTitleCard } from "./HomeTitleCard";
 
@@ -15,10 +15,7 @@ interface FormRow {
 export const HomePageContent = (Props: FormRow) => {
   return (
     <>
-      <Grid item xs={0.5} sx={{ color: Props.colour }}>
-        <Paper></Paper>
-      </Grid>
-      <Grid item xs={5}>
+      <Box className = "cardcontent">
         <HomeTitleCard
           title={Props.title}
           subtitle={Props.subtitle}
@@ -27,10 +24,10 @@ export const HomePageContent = (Props: FormRow) => {
           enablebutton={Props.enablebutton}
           colour={Props.colour}
         />
-      </Grid>
-      <Grid item xs={5}>
+      </Box>
+      <Box className = "subcontent">
         {Props.subcontent}
-      </Grid>
+      </Box>
     </>
   );
 };

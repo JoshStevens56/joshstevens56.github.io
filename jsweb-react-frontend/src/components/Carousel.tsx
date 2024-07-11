@@ -17,19 +17,18 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
  * ------------------------------------ */
 
 export interface CarouselCards {
-  content: CardContent[]
+  content: CardContent[];
 }
 
 interface CardContent {
-  title: string,
-  subtitle: string,
-  buttonlink: string,
-  buttontext: string,
-  colour: string,
-  buttonvisible: boolean
-  subcontent: any
+  title: string;
+  subtitle: string;
+  buttonlink: string;
+  buttontext: string;
+  colour: string;
+  buttonvisible: boolean;
+  subcontent: any;
 }
-
 
 export const Carousel = (Props: CarouselCards) => {
   const [cards, setCards] = useState<React.ReactElement[]>([]);
@@ -57,20 +56,26 @@ export const Carousel = (Props: CarouselCards) => {
 
   const handleNextPage = () => {
     setSlideDirection("left");
-    setCurrentPage((prevPage) => prevPage + 1);
+    currentPage == maxCards - 1
+      ? setCurrentPage(0)
+      : setCurrentPage((prevPage) => prevPage + 1);
   };
 
   const handlePrevPage = () => {
     setSlideDirection("right");
-    setCurrentPage((prevPage) => prevPage - 1);
+    currentPage == 0
+      ? setCurrentPage(maxCards-1)
+      : setCurrentPage((prevPage) => prevPage - 1);
   };
+  const maxCards = Math.ceil((cards.length || 0) / cardsPerPage)
+
 
   useEffect(() => {
     setCards(duplicateCards);
   }, []); //Here, we’re using the useEffect hook to initially set our cards to the duplicateCards array when the component mounts. The empty array [] means this effect runs only once, similar to componentDidMount in class components. When creating a more dynamic site, which we will cover in another tutorial, this would most be linked to some sort of call to collect the relevant data and then set the state of the “cards” array.
 
   return (
-    <Box
+    <Box className = "Carousel"
       sx={{
         display: "flex",
         flexDirection: "row",
@@ -78,17 +83,16 @@ export const Carousel = (Props: CarouselCards) => {
         alignContent: "center",
         justifyContent: "center",
         height: "100%",
-        width:"100%"
+        width: "100%",
       }}
     >
       <IconButton
         onClick={handlePrevPage}
         sx={{ margin: 5 }}
-        disabled={currentPage == 0}
       >
         <NavigateBeforeIcon />
       </IconButton>
-      <Box
+      <Box className = "Carousel-Content"
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -96,7 +100,8 @@ export const Carousel = (Props: CarouselCards) => {
           alignContent: "center",
           justifyContent: "center",
           height: "100%",
-          width:"100%"
+          width: "100%",
+          paddingBottom:"2vh"
         }}
       >
         {cards.map((card, index) => (
@@ -105,20 +110,25 @@ export const Carousel = (Props: CarouselCards) => {
             sx={{
               width: "100%",
               height: "100%",
-              display: currentPage === index ? "block" : "none",
+              display: currentPage === index ? "flex" : "none",
             }}
           >
-            <Slide direction={slideDirection} in={currentPage===index}>
-                <Stack spacing={2} direction="row"> {cards.slice(index*cardsPerPage, index*cardsPerPage+cardsPerPage)}</Stack>
+            <Slide direction={slideDirection} in={currentPage === index}>
+              <Stack spacing={2} direction="row">
+                {" "}
+                {cards.slice(
+                  index * cardsPerPage,
+                  index * cardsPerPage + cardsPerPage
+                )}
+              </Stack>
             </Slide>
-
           </Box>
         ))}
       </Box>
       <IconButton
         onClick={handleNextPage}
         sx={{ margin: 5 }}
-        disabled={currentPage >= Math.ceil((cards.length || 0)/cardsPerPage)-1}
+        
       >
         <NavigateNextIcon />
       </IconButton>

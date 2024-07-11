@@ -36,14 +36,16 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   typography: {
     fontFamily: "Lexend",
-    h2: {
-      fontWeight: "bold",
+    h1: {
+      fontWeight: "600",
       letterSpacing: "-2%",
+      fontSize: "10vh"
     },
     subtitle1: {
-      fontsize: 28,
+      fontSize:"2.4vh",
       lineHeight: "150%",
       fontWeight: "normal",
+      paddingLeft:"1vw"
     },
   },
   colours: {

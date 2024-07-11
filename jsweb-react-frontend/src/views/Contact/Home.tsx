@@ -4,3 +4,5 @@ export const Contact = () => {
         <>Home</>
     )
 }
+
+export default Contact;
