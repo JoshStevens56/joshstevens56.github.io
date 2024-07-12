@@ -45,7 +45,7 @@ const theme = createTheme({
       fontSize:"2.4vh",
       lineHeight: "150%",
       fontWeight: "normal",
-      paddingLeft:"1vw"
+      paddingLeft: 6
     },
   },
   colours: {

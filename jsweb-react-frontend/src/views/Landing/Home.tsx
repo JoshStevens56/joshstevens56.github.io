@@ -48,15 +48,15 @@ const cards: CarouselCards ={content:[
     colour: themeColours.tertiary,
   },{
     title: "Blog",
-    subtitle: "Check out who I am",
+    subtitle: "Where I ramble about my favourite games and shows",
     buttonvisible: true,
     buttonlink: "Blog",
-    buttontext: "blog",
+    buttontext: "Read More",
     subcontent: <></>,
     colour: themeColours.extra1,
   },{
     title: "Contact",
-    subtitle: "Check out who I am",
+    subtitle: "How to contact me",
     buttonvisible: true,
     buttonlink: "Contact",
     buttontext: "contact",

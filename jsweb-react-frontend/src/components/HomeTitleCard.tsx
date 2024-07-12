@@ -6,6 +6,7 @@ import {
   CardActions,
   ButtonProps,
   styled,
+  alpha,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +26,8 @@ export const HomeTitleCard = (Props: CardContent) => {
     color: theme.palette.getContrastText(Props.colour),
     backgroundColor: Props.colour,
     "&:hover": {
-      backgroundColor: Props.colour,
+      backgroundColor: alpha(Props.colour, 0.7),
+      color: theme.palette.getContrastText(alpha(Props.colour, 0.4))
       
     },
   }));
@@ -35,15 +37,15 @@ export const HomeTitleCard = (Props: CardContent) => {
       <CardContent>
         <Typography color={Props.colour} variant="h1">
           {Props.title}
-        </Typography>
+        </Typography> 
         <Typography sx={{ mb: 1.5 }} color="text.secondary" variant="subtitle1">
           {Props.subtitle}
         </Typography>
       </CardContent>
       {Props.enablebutton && (
-        <CardActions sx={{paddingLeft:"2vw"}}>
+        <CardActions sx={{paddingLeft:"18px" }}>
           <ColorButton
-            size="small"
+            size="medium"
             variant="contained"
             onClick={() => navigate(`/${Props.buttonlink}`)}
           >

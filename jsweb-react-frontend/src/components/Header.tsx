@@ -17,12 +17,13 @@ function Header() {
 
   return (
     <AppBar position="sticky" sx={{background:'#EFEFEF', color: '#323F49', boxShadow:'none'}} className="header">
-      <Container maxWidth={false}>
-        <Toolbar disableGutters>
+      <Container maxWidth={false} sx={{maxHeight: "8vh"}}>
+        <Toolbar disableGutters sx={{maxHeight: "8vh"}}>
           <Button onClick={() => navigate("/")}>
             <img
               src={logo}
               className="logo"
+              height="50vh"
               onClick={() => navigate("/")}
             ></img>
           </Button>
